@@ -540,8 +540,6 @@ class WorkloadTest(base.BaseWorkloadmgrTest):
         try:
             self.created = False
             self.vm_id = self.create_vm()
-            self.volume_id = self.create_volume()
-            self.attach_volume(self.volume_id, self.vm_id)
 
             # Create workload
             self.wid = self.workload_create([self.vm_id])
@@ -570,8 +568,6 @@ class WorkloadTest(base.BaseWorkloadmgrTest):
             # Prerequisites
             self.created = False
             self.vm_id = self.create_vm()
-            self.volume_id = self.create_volume()
-            self.attach_volume(self.volume_id, self.vm_id)
 
             # Create scheduled workload
             # Modify workload scheduler to enable and set the start date, time
