@@ -578,16 +578,16 @@ class WorkloadTest(base.BaseWorkloadmgrTest):
             # and timezone
             now = datetime.datetime.utcnow()
             now_date = datetime.datetime.strftime(now, "%m/%d/%Y")
-            now_time_plus_2 = now + datetime.timedelta(minutes=2)
-            now_time_plus_2 = datetime.datetime.strftime(
-                now_time_plus_2, "%I:%M %p")
+            now_time_plus_3 = now + datetime.timedelta(minutes=3)
+            now_time_plus_3 = datetime.datetime.strftime(
+                now_time_plus_3, "%I:%M %p")
             self.interval = tvaultconf.interval
             self.retention_policy_type = tvaultconf.retention_policy_type
             self.retention_policy_value = tvaultconf.retention_policy_value
             try:
                 self.wid = self.workload_create([self.vm_id], 
                                     jobschedule={"start_date": now_date.strip(),
-                                                 "start_time": now_time_plus_2.strip(),
+                                                 "start_time": now_time_plus_3.strip(),
                                                  "interval": self.interval,
                                                  "retention_policy_type":
                                                      self.retention_policy_type,
