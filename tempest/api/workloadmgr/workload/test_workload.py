@@ -589,8 +589,8 @@ class WorkloadTest(base.BaseWorkloadmgrTest):
                                                      self.retention_policy_type,
                                                  "retention_policy_value":
                                                      self.retention_policy_value,
-                                                 "enabled": "True",
-                                                 "workload_cleanup": "False"})
+                                                 "enabled": "True"},
+                                                 workload_cleanup=False)
                 LOG.debug("Workload ID: " + str(self.wid))
                 self.wait_for_workload_tobe_available(self.wid)
                 if(self.getWorkloadStatus(self.wid) == "available"):
