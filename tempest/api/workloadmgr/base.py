@@ -342,8 +342,7 @@ class BaseWorkloadmgrTest(tempest.test.BaseTestCase):
             self.delete_port(server_id)
             body = self.servers_client.show_server(server_id)['server']
             self.servers_client.delete_server(server_id)
-            waiters.wait_for_server_termination(self.servers_client, server_id,
-                    ignore_error=True)
+            waiters.wait_for_server_termination(self.servers_client, server_id)
         except lib_exc.NotFound:
             return
 
